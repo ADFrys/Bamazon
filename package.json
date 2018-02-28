@@ -1,0 +1,23 @@
+{
+  "name": "bamazon_mysql_node_app",
+  "version": "1.0.0",
+  "description": "Mysql project",
+  "main": "bamazonCustomer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ADFrys/Bamazon_Mysql_Node_App.git"
+  },
+  "author": "Angela",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ADFrys/Bamazon_Mysql_Node_App/issues"
+  },
+  "homepage": "https://github.com/ADFrys/Bamazon_Mysql_Node_App#readme",
+  "dependencies": {
+    "inquirer": "^5.1.0",
+    "mysql": "^2.15.0"
+  }
+}
