@@ -17,3 +17,9 @@ VALUES ("keyboard", "electronics", 24.99, 100), ("mouse", "electronics", 9.99, 2
 ("laptop", "electronics", 1000, 50), ("vitamins", "health", 10.25, 500), ("dog food", "pet supplies", 30, 200), 
 ("cat food", "pet supplies", 24.99, 300), ("bandages", "health", 3.99, 900), ("sweatshirt", "clothing", 24.99, 10), 
 ("jeans", "clothing", 29.99, 20), ("t-shirt", "clothing", 9.99, 35);
+
+
+UPDATE products
+SET stock_quantity = stock_quantity - 1
+WHERE item_id = 1
+
