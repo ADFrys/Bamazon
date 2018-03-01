@@ -14,8 +14,51 @@ var connection = mysql.createConnection({
   database: "bamazon"
 });
 
+//Once connected, show id connected and run display product list function.
+connection.connect(function(error) {
+  if (error) throw error;
+  console.log("connected as id " + connection.threadId + "\n");
+  displayProductList();
+  askWhatPurchase();
+});
 
+// Function that displays the list of products available
+function displayProductList() {
+  console.log("Welcome to Bamazon! Here is a list of products available for purchase...\n");
+  connection.query("SELECT item_id, product_name, price FROM products", function(error, response){
+  	if(error) throw error;
+  	// for loop that organizes the output of product id, name and price
+  	for (var i=0; i< response.length; i++) {
+      console.log("Item ID: " + response[i].item_id + " || Product: " + response[i].product_name + " || Price: " + "$" + response[i].price);
+  	}
+  });
+}
 
-
-
-
+// Function that asks the customers what they would like to purchase
+function askWhatPurchase() {
+  connection.query("SELECT * FROM products", function(error, response) {
+    if (error) throw error;
+  inquirer.prompt([
+  {
+  	type: "list",
+  	name: "product_id",
+  	message: "Please select the product id you would like to buy.",
+  	choices: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
+  },
+  {
+    name: "quantity",
+    type: "input",
+    message: "How many do you want to purchase?",
+    validate: function(value) {
+    	if (isNaN(value) === true) {
+    	  console.log("Invalid entry. Please enter a number.")
+    	  }
+      }
+    }
+  ]).then(function(answer) {
+    var chosenItem;
+    // for (var i=0; i<response.length; i++) {
+    // }
+  })
+})
+}
