@@ -41,8 +41,8 @@ function askWhatPurchase() {
   inquirer.prompt([
   {
   	type: "list",
-  	name: "product_id",
-  	message: "Please select the product id you would like to buy.",
+  	name: "item_id",
+  	message: "Please select the item id you would like to buy.",
   	choices: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
   },
   {
@@ -50,15 +50,26 @@ function askWhatPurchase() {
     type: "input",
     message: "How many do you want to purchase?",
     validate: function(value) {
-    	if (isNaN(value) === true) {
-    	  console.log("Invalid entry. Please enter a number.")
+    	if (isNaN(value) === false) {
+        return true;
     	  }
+        console.log("\nInvalid entry. Please enter a number.");
+        return false;
       }
     }
   ]).then(function(answer) {
-    var chosenItem;
-    // for (var i=0; i<response.length; i++) {
-    // }
+    var chosenItem = answer.item_id;
+    console.log("You are purchasing..." + "\nitem id: " + chosenItem + "\nquantity: " + answer.quantity);
+    var query = connection.query(
+      "UPDATE quantity WHERE ?",
+      {
+        item_id: chosenItem
+      },
+      function(err, res) {
+        console.log(" You will be charged " + response[chosenItem -1].price*answer.quantity + " to your credit card")
+      }
+
+      )
   })
 })
 }
