@@ -44,7 +44,7 @@ function managerOptions() {
       	console.log("Viewing low inventory:\n");
       	for (var j=0; j<res.length; j++) {
       	  if (res[j].stock_quantity <5) {
-            return console.log("Item ID: " + res[j].item_id + " || Product: " + res[j].product_name + " || Price: " + "$" + res[j].price + " || quantity: " + res[j].stock_quantity);
+            console.log("Item ID: " + res[j].item_id + " || Product: " + res[j].product_name + " || Price: " + "$" + res[j].price + " || quantity: " + res[j].stock_quantity);
       	  }
         }
       }
@@ -70,7 +70,7 @@ function addInventory() {
       type: "list",
       name: "inventoryId",
       message: "Please select which product_id you would like to add inventory to:\n",
-      choices: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"]
+      choices: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13"]
     },
     {
     name: "quantity_inventory",
@@ -108,7 +108,6 @@ function addInventory() {
 
 // Function that allows a manager to add a product
 function addProduct() {
-  console.log("This is running");
   connection.query("SELECT * FROM products", function(err, res) {
     if (err) throw err;
     inquirer.prompt([
