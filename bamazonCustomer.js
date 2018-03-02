@@ -60,10 +60,13 @@ function askWhatPurchase() {
   ]).then(function(answer) {
     var chosenItem = answer.item_id;
     var quantity = answer.quantity;
+    // checks to be sure that the quantity requested is greater than the inventory
     if (quantity > response[chosenItem-1].stock_quantity) {
-      return console.log("Insufficient quantity!");
-    }
+      console.log("Insufficient quantity!"); 
+      return connection.end();
 
+    }
+    // Fulfills the order
     console.log("You are purchasing..." + "\nitem id: " + chosenItem + "\nquantity: " + quantity);
     connection.query(
       "UPDATE products SET ? WHERE ?",
@@ -77,6 +80,7 @@ function askWhatPurchase() {
     ],
         function(err, res) {
           console.log(" Your credit card will be charged $" + response[chosenItem -1].price*quantity);
+          connection.end();
         }
       );
     })
