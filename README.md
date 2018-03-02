@@ -6,7 +6,10 @@
 See the video below:**
 
 **CUSTOMER VIEW VIDEO**
-https://drive.google.com/open?id=1SmXrN-cKzxIIN5N6sVQ0OojHO_F_enSJ
+https://drive.google.com/file/d/1SmXrN-cKzxIIN5N6sVQ0OojHO_F_enSJ/view?usp=sharing
+
+**MANAGER VIEW VIDEO**
+https://drive.google.com/file/d/1gXksrsUkR1JDQ1kGHKgoq9B59sManqLM/view?usp=sharing
 
 *Bamazon does the following...*
 
@@ -18,7 +21,17 @@ https://drive.google.com/open?id=1SmXrN-cKzxIIN5N6sVQ0OojHO_F_enSJ
 
 * The amount of inventory will be checked and if there isn't enough inventory, then you will be notified. However, if there is enough inventory, your request will be fulfilled. The total amount of your purchase will appear and the inventory will be subtracted from the mysql database for that item. 
 
-- If you want to clone this repo and run it, you will need to create your own Mysql database using the Mysql queries provided in the file "BamazonSchema.sql". In addition, you will want to enter your own password on line 13 of the file "bamazonCustomer.js". The password is not shown for security reasons. 
+**MANAGER VIEW**
+
+* Type "Node bamazonManager.js" in the command line to run the app.
+
+* You will be shown a list of menu options:
+	* If you select "View products for sale", you will see a list of item ids, product names, prices and stock quantities
+	* If you select "View low inventory", you will see the products with a stock quantity of less than 5 
+	* If you select "Add to inventory", you will be asked which current product you would like to add stock to.
+	* If you select "Add new product", you will be asked a series of questions about the new product to be added (name, department, price, etc.). This new item will be added to the mysql database as well.
+
+- If you want to clone this repo and run it, you will need to create your own Mysql database using the Mysql queries provided in the file "BamazonSchema.sql". In addition, you will want to enter your own password in both the "bamazonCustomer.js" and the "bamazonManager.js" files. The password is not shown for security reasons. 
 
 - A package.json file is provided in the repo, but you will have to install the dependencies. The npm packages required are inquirer and mysql. For example, in the command line type "npm install mysql".
 
