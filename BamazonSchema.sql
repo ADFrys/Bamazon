@@ -18,7 +18,7 @@ VALUES ("keyboard", "electronics", 24.99, 100), ("mouse", "electronics", 9.99, 2
 ("cat food", "pet supplies", 24.99, 300), ("bandages", "health", 3.99, 900), ("sweatshirt", "clothing", 24.99, 10), 
 ("jeans", "clothing", 29.99, 20), ("t-shirt", "clothing", 9.99, 35);
 
-
+** This is the sql query for the function which checks the stock quantity. 
 UPDATE products
 SET stock_quantity = stock_quantity - 1
 WHERE item_id = 1
