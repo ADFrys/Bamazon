@@ -2,6 +2,10 @@
 
 **Bamazon Mysql Node app uses a Mysql database to check and 'fulfill' product orders.**
 
+**For convenience, I have recorded a video of the working Node App. 
+See the video below:**
+https://drive.google.com/open?id=1SmXrN-cKzxIIN5N6sVQ0OojHO_F_enSJ
+
 *Bamazon does the following...*
 
 * Type "Node bamazonCustomer.js" in the command line to run the app. 
@@ -14,6 +18,3 @@
 
 - A package.json file is provided in the repo, but you will have to install the dependencies. The npm packages required are inquirer and mysql. For example, in the command line type "npm install mysql".
 
-**For convenience, I have recorded a video of the working Node App. 
-See the video below:**
-https://drive.google.com/open?id=1SmXrN-cKzxIIN5N6sVQ0OojHO_F_enSJ
