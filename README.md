@@ -4,9 +4,13 @@
 
 **For convenience, I have recorded a video of the working Node App. 
 See the video below:**
+
+**CUSTOMER VIEW VIDEO**
 https://drive.google.com/open?id=1SmXrN-cKzxIIN5N6sVQ0OojHO_F_enSJ
 
 *Bamazon does the following...*
+
+**CUSTOMER VIEW**
 
 * Type "Node bamazonCustomer.js" in the command line to run the app. 
 
