@@ -43,7 +43,7 @@ function askWhatPurchase() {
   	type: "list",
   	name: "item_id",
   	message: "Please select the item id you would like to buy.",
-  	choices: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
+  	choices: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"]
   },
   {
     name: "quantity",
@@ -60,6 +60,10 @@ function askWhatPurchase() {
   ]).then(function(answer) {
     var chosenItem = answer.item_id;
     var quantity = answer.quantity;
+    if (quantity > response[chosenItem-1].stock_quantity) {
+      return console.log("Insufficient quantity!");
+    }
+
     console.log("You are purchasing..." + "\nitem id: " + chosenItem + "\nquantity: " + quantity);
     connection.query(
       "UPDATE products SET ? WHERE ?",
