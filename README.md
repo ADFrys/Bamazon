@@ -12,6 +12,8 @@
 
 - If you want to clone this repo and run it, you will need to create your own Mysql database using the Mysql queries provided in the file "BamazonSchema.sql". In addition, you will want to enter your own password on line 13 of the file "bamazonCustomer.js". The password is not shown for security reasons. 
 
-- A package.json file is provided in the report, but you will have to install the dependencies. The npm packages required are inquirer and mysql. For example, in the command line type "npm install mysql".
+- A package.json file is provided in the repo, but you will have to install the dependencies. The npm packages required are inquirer and mysql. For example, in the command line type "npm install mysql".
 
-- For convenience, I have included a video/screenshots of the working Node App. 
+**For convenience, I have recorded a video of the working Node App. 
+See the video below:**
+https://drive.google.com/open?id=1SmXrN-cKzxIIN5N6sVQ0OojHO_F_enSJ
