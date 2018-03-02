@@ -65,17 +65,16 @@ function askWhatPurchase() {
       "UPDATE products SET ? WHERE ?",
     [
       {
-        stock_quantity: stock_quantity - quantity
+        stock_quantity: response[chosenItem -1].stock_quantity - quantity
       },
       {
         item_id: chosenItem
       },
     ],
-      function(err, res) {
-        console.log(" Your credit card will be charged $" + response[chosenItem -1].price*quantity);
-        console.log(response[chosenItem -1].stock_quantity);
-      }
+        function(err, res) {
+          console.log(" Your credit card will be charged $" + response[chosenItem -1].price*quantity);
+        }
       );
+    })
   })
-})
 }
