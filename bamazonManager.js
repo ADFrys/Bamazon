@@ -36,6 +36,21 @@ function managerOptions() {
         for (var i=0; i< res.length; i++) {
           console.log("Item ID: " + res[i].item_id + " || Product: " + res[i].product_name + " || Price: " + "$" + res[i].price + " || quantity: " + res[i].stock_quantity);
   	    }
+      }
+      if (answer.manager_menu === "View low inventory") {
+      	console.log("Viewing low inventory:\n");
+      	for (var j=0; j<res.length; j++) {
+      		// console.log(res[j].stock_quantity)
+      	  if (res[j].stock_quantity <=5) {
+            console.log("Item ID: " + res[j].item_id + " || Product: " + res[j].product_name + " || Price: " + "$" + res[j].price + " || quantity: " + res[j].stock_quantity);
+      	  } 
+        }
+      }
+      if (answer.manager_menu === "Add to inventory") {
+      	console.log("Add to inventory...\n");
+      }	
+      if (answer.manager_menu === "Add a new product") {
+      	console.log("Add a new product...\n");
       }	
     })
   })
